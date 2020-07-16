@@ -1,4 +1,5 @@
 # Write your code below game_hash
+require 'pry'
 def game_hash
   {
     home: {
@@ -127,3 +128,66 @@ def game_hash
 end
 
 # Write code here
+
+def num_points_scored(a)
+    c=[]
+   game_hash[:home][:players].each do |b|
+       if b[:player_name] == a
+           c << b[:points]
+       end
+   end
+   game_hash[:away][:players].each do |b|
+       if b[:player_name] == a
+           c << b[:points]
+       end
+   end
+   return c
+end
+
+
+def shoe_size (a)
+    c=[]
+   game_hash[:home][:players].each do |b|
+       if b[:player_name] == a
+           c << b[:points]
+       end
+   end
+   game_hash[:away][:players].each do |b|
+       if b[:player_name] == a
+           c << b[:shoe]
+       end
+   end
+   return c
+end
+
+
+def team_colors (a)
+    c=[]
+   game_hash[:home][:players].each do |b|
+       if b[:player_name] == a
+           c << game_hash[:home][:colors]
+       end
+   end
+   game_hash[:away][:players].each do |b|
+       if b[:player_name] == a
+           c << game_hash[:away][:colors]
+       end
+   end
+   return c
+end
+
+
+def team_names (a)
+    c=[]
+   game_hash[:home][:players].each do |b|
+       if b[:player_name] == a
+           c << game_hash[:home][:team_name]
+       end
+   end
+   game_hash[:away][:players].each do |b|
+       if b[:player_name] == a
+           c << game_hash[:away][:team_name]
+       end
+   end
+   return c
+end
